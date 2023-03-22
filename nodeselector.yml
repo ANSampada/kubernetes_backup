@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: jenkins
+  labels:
+    app: jenkinsapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: jenkinsapp
+  template:
+    metadata:
+      name: jenkins
+      labels:
+        app: jenkinsapp
+    spec:
+      containers:
+        - image: jenkins/jenkins:lts
+          name: jenkins
+      nodeSelector:
+        env: prod
+
+

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apppod
+  labels:
+    deploy: jenkinspod
+spec:
+  replicas: 2
+  selector:
+    matchLabels: 
+      app: jenkins
+  template: 
+    metadata:
+      name: jenkinspod
+      labels:
+        app: jenkins
+    spec: 
+      containers:
+        - image: jenkins/jenkins:lts
+          name: jenkins   
+      tolerations:
+        - key: "color"
+          operator: "Equal"
+          value: "pink"
+          effect: "NoSchedule"

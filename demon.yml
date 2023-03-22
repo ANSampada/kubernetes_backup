@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: demonset
+  labels:
+    demo: demonode
+spec: 
+  selector:
+    matchLabels:
+      app: jenkins
+  template:
+    metadata:
+      labels: 
+        app: jenkins
+    spec:
+      containers:
+        - image: jenkins/jenkins:lts
+          name: jenkins
+
+
+      
+

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydeploymet
+  labels:
+    replica: jenkinsdeployment
+  namespace: devenv
+spec:
+  replicas: 2
+  strategy: 
+    type: RollingUpdate
+    rollingUpdate: 
+      maxSurge: 1
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      usepods: mypodnew
+  template:
+    metadata: 
+       name: jenkinspod
+       labels: 
+         usepods: mypodnew
+    spec: 
+      containers:
+        - image: jenkins/jenkins:lts
+          name: jenkins    

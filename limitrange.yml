@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: max-cpu-mem-range
+  namespace: devenv
+spec:
+  limits:
+    - default:
+        cpu: 1
+        memory: 600Mi
+      defaultRequest:
+        cpu: 0.4
+        memory: 250Mi
+      type: Container
+
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: resoucequota
+  namespace: devenv
+spec:
+  hard:
+    requests.cpu: "2"
+    requests.memory: 2Gi
+    limits.cpu: "4"
+    limits.memory: 4Gi
+    pods: 3
