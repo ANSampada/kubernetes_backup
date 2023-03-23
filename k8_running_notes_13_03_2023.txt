@@ -1,0 +1,34 @@
+//bare matel cluster is not  working run the following commands
+
+kubectl delete -f https://docs.projectcalico.org/v3.14/manifests/calico.yaml
+kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/tigera-operator.yaml
+wget https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/custom-resources.yaml
+replace cidr with 10.244.0.0/16
+kubectl apply -f custom-resources.yaml
+
+
+# kubectl get nodes     //to see the info about nodes
+# kubectl get pods       //only creted
+# kubectl get pods -A //all the namespace and all are running in kubesystem namespace which is default 
+# kubectl get ns      //to check the namespace 
+
+	1. create a yaml file to create pod
+
+	apiVersion: v1
+	kind: Pod
+	metadata:
+	  labels:
+		run: jenkins
+	  name: jenkins
+	spec:
+	  containers:
+	  - image: jenkins/jenkins:lts
+		name: jenkins
+    
+ 
+ # kubectl apply -f jenkinspod.yaml
+ # kubectl get pods
+ # kubectl get pods -o wide
+
+ 
+
