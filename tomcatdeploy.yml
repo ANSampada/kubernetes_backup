@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tomcat
+  labels:
+    replica: tomcatdeploy
+spec:
+  replicas: 2
+  strategy: 
+    type: RollingUpdate
+    rollingUpdate: 
+      maxSurge: 1
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      usepods: mypodnew
+  template:
+    metadata: 
+       name: tomcatpod
+       labels: 
+         usepods: mypodnew
+    spec: 
+      containers:
+        - image: sampadaan/java_image:8
+          name: tomcat   
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tomservices
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+  selector:
+    usepods: mypodnew
+

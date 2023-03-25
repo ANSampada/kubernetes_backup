@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jendepl
+  labels:
+    app: jenapps
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: jenapps
+  template:
+    metadata:
+      labels:
+        app: jenapps
+    spec:
+      containers: 
+        - image: jenkins/jenkins:lts
+          name: jendep
+          env:
+          - name: JENKINS_OPTS
+            value: --prefix=/jenkins
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkinservice
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+  selector:
+    app: jenapps
+

@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: tom-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/add-base-url: "true"
+    kubernetes.io/ingress.allow-http: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+  - host: 
+    http:
+      paths:
+      - backend:
+          service: 
+            name: tomservices
+            port:
+              number: 8080  
+        path: /
+        pathType: Prefix
+

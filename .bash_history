@@ -817,3 +817,238 @@ clear
 history
 clear
 ls
+clear
+sudo su -
+git init
+git remote add origin https://github.com/ANSampada/kubernetes_backup.git
+ls
+git branch -M main
+git push -u origin main
+ls
+git add README.md
+git add .*yml
+git add 
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/ANSampada/kubernetes_backup.git
+git push -u origin main
+clear'
+clear
+ls
+clear
+vi PVS.yml
+kubectl apply -f PVS.yml
+kubectl get pv
+vi PVCS
+vi PVCS.yml
+vi PVS.yml
+kubectl apply -f PVS.yml
+kubectl delete -f PVS.yml
+kubectl apply -f PVS.yml
+vi PVCS.yml
+kubectl apply -f PVCS.yml
+kubectl get pvc
+kubectl get pv
+kubectl describe ebs-claim
+kubectl describe pvc ebs-claim
+vi pvpod.yml
+kubectl apply -f pvpod.yml 
+kubectl get pod
+kubectl get pod -A
+kubectl get pod 
+kubectl get pv
+kubectl get pvc
+kubectl describe pod app
+kubectl apply -f  taint-toleration.yml 
+kubectl delete -f  taint-toleration.yml 
+ls
+kubectl delete -f affinity.yml 
+kubectl delete -f affinity-pod.yml 
+clear
+kubectl get node
+kubectl describe node ip-10-0-0-136.ap-south-1.compute.internal
+kubectl get node
+kubectl get pod
+kubectl delete -f affinity-pod.yml --force
+kubectl get node
+kubectl describe node ip-10-0-0-71.ap-south-1.compute.internal
+clear
+ls
+kubectl get pod
+kubectl delete -f pvpod.yml
+kubectl apply -f pvpod.yml
+kubectl delete -f pvpod.yml
+kubectl apply -f pvpod.yml
+kubectl get pod
+kubectl describe pod app
+kunectl get pod
+kubectl get node
+ls
+kubectl delete -f PVCS.yml
+kubectl delete -f PVS.yml
+vi PVS.yml
+kubectl apply -f PVS.yml
+kubectl apply -f PVCS.yml
+kubcel get pod
+kubectl get pod
+
+kubectl get pod
+kubectl describe pod app
+df -h
+kubectl delete -f pvpod.yml
+df -h
+kubectl delete -f PVCS.yml
+kubectl delete -f PVS.yml
+clear
+vi StorageClase.yml
+kubectl apply -f StorageClase.yml 
+kubectl get sc
+vi PVC-Dynamic.yml
+kubectl get pv
+kubectl get pvc
+kubectl apply -f PVC-Dynamic.yml
+kubectl get pv
+kubectl get pvc
+vi pod-dynamic.yml
+kubectl get pvc
+kubectl get pv
+vi PVC-Dynamic.yml
+kubectl get pvc
+kubectl apply -f pod-dynamic.yml 
+kubectl get pvc
+clear
+ls
+kubectl delete -f PVC-Dynamic.yml 
+clear
+kubectl get pv
+kubectl get pvc
+ls
+kubectl delete -f pod-dynamic.yml 
+kubectl get pvc
+kubectl get pv
+ls
+kubectl delete -f StorageClase.yml 
+clear
+vi stateful.yml
+kubectl get pod
+kubectl apply -f stateful.yml
+kubectl get stateful
+kubectl get statefulset web
+kubectl get service
+ls
+kubectl delete -f clusterIp.yml 
+kubectl delete -f nodeselector.yml 
+kubectl delete -f NodeIP.yml 
+kubectl delete -f LoadBalancer.yml 
+clear
+kubectl get pods -w -l app=nginx
+kubectl get pods 
+kubectl describe pods web-0
+kubectl get pv
+kubectl get pvc
+clear
+ls
+kubectl delete stateful.yml 
+kubectl delete -f stateful.yml 
+clear
+kubectl get pods -w -l app=nginx
+clear
+ls
+kubectl apply -f stateful.yml 
+kubectl delete -f stateful.yml 
+vi stateful.yml 
+kubectl apply -f stateful.yml 
+kubectl get pods
+kubectl describe pods
+kubectl delete -f stateful.yml 
+vi stateful.yml 
+kubectl apply -f stateful.yml 
+kubectl get pods
+kubectl delete -f stateful.yml 
+ls
+kubectl apply -f StorageClase.yml 
+kubectl get sc
+vi stateful.yml 
+clear
+kubectl apply -f StorageClase.yml 
+kubectl apply -f stateful.yml 
+kubectl get pod
+kubectl describe pod web-0
+ls
+vi StorageClase.yml 
+vi stateful.yml 
+kubectl get pv
+kubectl get pvc
+kubectl describe pvc www-web-0
+kubectl delete -f stateful.yml 
+kubectl get pvc
+kubectl delete pvc www-web-0
+clear
+kubectl apply -f stateful.yml 
+kubectl get pod
+kubectl get pod -owide
+kubectl delete -f stateful.yml 
+kubectl apply -f stateful.yml 
+kubectl get sf
+kubectl get statefulset
+kubectl get sv
+kubectl get sc
+kubectl get service
+kubectl get pvc
+kubectl delete -f stateful.yml 
+clear
+history
+exit
+clear
+ls
+kubectl get pods
+kubectl get pvc
+kubectl delete -f StorageClase.yml 
+kubectl get pvc
+kubectl delete -f stateful.yml 
+kubectl delete pvc www-web-0
+kubectl delete pvc www-web-1
+kubectl delete pvc www-web-2
+kubectl get pvc
+kubectl get pv
+kubectl delete pv pvc-36f235dc-d044-465a-ba9d-df07cd124925 
+kubectl delete pv pvc-36f235dc-d044-465a-ba9d-df07cd124925 --force
+clear
+kubectl get pv
+kubectl delete pv pvc-a97d8b16-912e-4c9c-824b-fa91c898602d 
+kubectl delete pv pvc-a97d8b16-912e-4c9c-824b-fa91c898602d --force
+clear
+kubectl logs calico-node-dq2cb -n kube-system
+git add .
+git push -u origin main
+git pull https://github.com/ANSampada/kubernetes_backup.git
+git push -u origin main
+ls
+clear
+ls
+kubectl get pod
+kubectl get nodde
+kubectl get node
+vi ingress.yml
+vi ingressdeploy.yml
+kubectl apply -f ingressdeploy.yml 
+kubectl get svc
+kubectl get ingress
+kubectl apply -f ingress.yml 
+kubectl get ingress
+kubectl describe ingress jen-ingress
+kubectl get ingress
+kubectl delete -f ingress.yml 
+kubectl delete -f ingressdeploy.yml 
+vi ingressdeploy.yml
+vi tomcatdeploy.yml
+kubectl apply -f  tomcatdeploy.yml
+vi tomcatingress.yml 
+kubectl apply -f  tomcatingress.yml 
+kubectl get svc
+kubectl get ingress
+kubectl get pod
+kubectl describe tom-ingress
+kubectl describe ingress tom-ingress
+exit
